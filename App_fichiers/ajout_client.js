@@ -10,7 +10,7 @@ import Menu2 from './menu_deroulant';
 
 
 // Chemin du fichier CSV
-const filePath = 'src/fichier_csv/Contacts.csv';
+const filePath = '/Users/charlespelong/Desktop/peba/src/fichier_csv/Contacts.csv';
 
 
 const fs = require('fs');

@@ -14,7 +14,7 @@ import BarreRecherche from "./barre_recherche_clients_reseau";
 
 
 const fs = require('fs');
-const filePath = 'src/fichier_csv/Contacts.csv';
+const filePath = '/Users/charlespelong/Desktop/peba/src/fichier_csv/Contacts.csv';
 
 
 

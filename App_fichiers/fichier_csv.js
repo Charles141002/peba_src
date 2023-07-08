@@ -1,4 +1,4 @@
-const fichier_csv = 'src/fichier_csv/Contacts.csv'
+const fichier_csv = '/Users/charlespelong/Desktop/peba/src/fichier_csv/Contacts.csv'
 
 const fs = require('fs');
 const XLSX = require('xlsx');

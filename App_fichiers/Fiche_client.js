@@ -24,7 +24,7 @@ const csv = require('csv-parser');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 // Chemin du fichier CSV à modifier
-const filePath = 'src/fichier_csv/Contacts.csv';
+const filePath = '/Users/charlespelong/Desktop/peba/src/fichier_csv/Contacts.csv';
 
 // Ligne spécifique que vous souhaitez modifier
 const ligneAmodifier = Retrouver_ligne_clients(props.entite["Adresse e-mail"]); // Retrouver_ligne_clients(props.entite["Adresse e-mail"])

@@ -8,6 +8,8 @@ import { Retrouver_infos_clients } from "./liste";
 import Menu2 from "./menu_deroulant";
 import BarreRecherche from "./barre_de_recherche";
 import jsonData from "./fichier_csv";
+import { AjoutClient } from './ajout_client';
+
 
 function Entreprise(props){
 
@@ -45,6 +47,8 @@ function Entreprise(props){
         switch (activePage) {
           case 'afficherBarreRecherche':
             return <BarreRecherche donnees={jsonData}/>
+            case 'afficherAjoutlient':
+              return <AjoutClient />
           default:
             return null;
         }
@@ -55,6 +59,8 @@ function Entreprise(props){
       <div className="container">
       <div id="menu">
         <button onClick={() => handleClick('afficherBarreRecherche')}>Afficher Barre de Recherche</button>
+        <button onClick={() => handleClick('afficherAjoutlient')}> Ajout Client</button>
+
         <Menu2 datas={jsonData}/>
         
       </div>
