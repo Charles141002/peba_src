@@ -1,38 +1,413 @@
-.App {
+h1 {
   text-align: center;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fiche-modifiable div {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 5px;
+}
+
+
+
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #375280;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #375280;
+}
+
+
+/* CSS for the fiche container */
+
+
+/* CSS for the bloc_info elements */
+.bloc_info {
+margin-bottom: 15px;
+}
+
+/* CSS for the h3 elements */
+.bloc_info h3 {
+margin: 0;
+font-size: 16px;
+font-weight: bold;
+color: #333;
+}
+
+/* CSS for the p.info elements */
+.bloc_info p.info {
+margin: 0;
+font-size: 14px;
+color: #777;
+}
+
+.newline {
+margin-top: 1em;
+}
+
+.rounded-button {
+border-radius: 10px;
+}
+
+.container {
+display: flex;
+height: 100vh;
+}
+
+#menu {
+
+background-color: #80afdc;
+color: #fff;
+padding: 20px;
+
+
+flex: 0 0 auto; /* Set the left div to occupy 25% of the container width */
+
+}
+
+#content {
+ 
+ 
+  background-color: #f1f1f1;
+  padding: 20px;
+  
+  flex: 1; /* Let the right div take up the remaining space */
+  overflow-y: auto;
   }
+
+
+
+.menu h1 {
+margin-bottom: 20px;
+font-size: 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#menu button {
+display: block;
+width: 100%;
+padding: 10px 20px;
+margin-bottom: 10px;
+background-color: #375280;
+color: #fff;
+border: none;
+border-radius: 4px;
+font-size: 16px;
+cursor: pointer;
+}
+
+.menu button:hover {
+background-color: #2980b9;
+}
+
+
+
+#content h2 {
+font-size: 24px;
+margin-bottom: 20px;
+}
+
+/* Ajoutez ici le style spÃ©cifique pour les fiches selon le style de Microsoft Access */
+
+.fiche-petite {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+.fiche-recherche {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin: 20px auto;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 10px;
+background-color: #fff;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+font-family: Arial, sans-serif;
+}
+
+
+/* LA */
+
+.menu1 {
+list-style: none;
+padding: 0;
+}
+
+.menu1 li {
+position: relative;
+}
+
+.menu1 a {
+display: block;
+padding: 10px;
+text-decoration: none;
+color: #333;
+}
+
+.submenu1 {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+background-color: #fff;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu1 li:hover .submenu1 {
+display: block;
+}
+
+.submenu1 li {
+border-bottom: 1px solid #ccc;
+}
+
+.submenu1 li:last-child {
+border-bottom: none;
+}
+
+.submenu1 a {
+padding: 8px 15px;
+}
+
+.submenu1 .submenu1 {
+top: 0;
+left: 100%;
+min-width: 150px;
+}
+
+
+
+#menu-deroulant {
+background-color: #dad5d5;
+border: 20px black;
+
+color: black;
+margin: 3em 0em;
+padding: 0.2em;
+cursor: pointer;
+user-select: none;
+overflow-y: auto;
+margin-bottom: 20px;
+height: calc(75%);
+
+}
+
+
+
+.bloc-titre-deroulant {
+display: flex;
+justify-content: space-between;
+margin:0em;
+padding:0em;
+width: 100%;
+
+}
+
+
+
+
+
+.dossier h1 {
+margin: 0.1em 0em;
+padding: 0em;
+font-size: large;
+font-weight: bold;
+
+}
+
+.sous-dossier h1 {
+margin: 0.05em 1em;
+padding: 0em;
+font-size: medium;
+font-weight: normal;
+}
+
+
+#menu-deroulant h3 {
+margin: 0.05em 1em 0.05em 4em;
+padding: 0em;
+width: auto;
+font-size: small;
+font-weight: normal;
+font-style: italic;
+text-align: left;
+}
+
+#menu-deroulant h2 {
+  margin: 0.05em 2em;
+  padding: 0em;
+  width: auto;
+  font-size: medium;
+  font-weight: normal;
+  font-style: normal;
+  text-align: left;
+  }
+#menu-deroulant h1 {
+    margin: 0.05em 0.1em;
+    padding: 0em;
+    width: auto;
+    font-size: large;
+    font-weight: bold;
+    font-style: normal;
+    text-align: left;
+    }
+
+
+#liste-reseau {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2em 0em;
+}
+
+#liste-reseau div {
+  width: calc(33.33% - 2em); /* Set the width of each item to occupy one-third of the container minus spacing */
+  flex-grow: 1; /* Allow items to grow to fill the available space */
+  margin: 0.5em 1em; /* Add spacing between items */
+  
+}
+
+#liste-reseau div button {
+  font-size: 1em;
+  height: 100%;
+}
+
+.petite-fiche {
+  font-size: 1em;
+  display: flex;
+  font-weight: bold;
+  background-color: #92bedc;
+  margin: 0.5em 1em;
+  padding: 0.5em 1em;
+}
+
+.petite-fiche p {
+  margin-right: 3px;
+}
+
+.fiche {
+  border-top: 10px solid #375280;
+  width: auto;
+margin: 20px auto;
+padding: 20px;
+
+
+background-color: #fff;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+font-family: Arial, sans-serif;
+}
+
+.fiche h1 {
+  font-size: xx-large;
+  color: #375280;
+  text-align: left;
+}
+
+.fiche label, .fiche-taux label {
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+  width: auto;
+}
+
+.fiche input, textarea, .fiche-taux input {
+  color: #5a739e;
+  border: 0.5px solid grey ;
+  font-size: 1em;
+  width: auto;
+}
+
+textarea {
+  width: 90%;
+  height: 90%;
+}
+
+.fiche-modifiable {
+  border-top: 1px solid gray;
+  overflow: auto;
+}
+
+.ligne {
+  display: flex;
+  
+  margin: 0 1.5em;
+}
+
+.ligne div {
+  margin: 1.5em;
+}
+
+.below {
+  display: flex;
+}
+
+.left {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-right: 1px gray;
+  flex: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.right {
+  flex: 1;
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.right input{
+  height: 100%;
 }
+
+.fiche-taux form {
+  display: flex;
+  border: none;
+}
+
+.fiche-taux {
+  padding: 1em;
+}
+
+.input-button {
+  display: flex;
+  margin: 0;
+  
+}
+
+.input-button p {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: #375280;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+

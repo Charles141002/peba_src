@@ -1,0 +1,35 @@
+//export const fichier_csv = 'U:/Base_de_donnee_David_ne_pas_efface/Contacts.csv'
+export const fichier_csv = 'D:/Base_de_donnee_David_ne_pas_efface/Base_de_donnee_David_ne_pas_efface/Contacts.csv'
+const fs = require('fs');
+const XLSX = require('xlsx');
+const csv = require('csv-parser');
+
+
+// Lire le contenu du fichier CSV
+const csvContent = fs.readFileSync(fichier_csv, 'utf-8');
+
+const jsonData = csvToJson(csvContent);
+console.log(jsonData);
+
+function csvToJson(csvContent) {
+
+    const lines = csvContent.split('\n');
+    const headers = lines[0].split(';');
+  
+    const jsonData = [];
+  
+    for (let i = 1; i < lines.length; i++) {
+      const values = lines[i].split(';');
+      const obj = {};
+  
+      for (let j = 0; j < headers.length; j++) {
+        obj[headers[j]] = values[j];
+      }
+  
+      jsonData.push(obj);
+    }
+  
+    return jsonData;
+  }
+
+export default jsonData;
