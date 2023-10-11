@@ -1,5 +1,6 @@
 //export const fichier_csv = 'U:/Base_de_donnee_David_ne_pas_efface/Contacts.csv'
-export const fichier_csv = 'D:/Base_de_donnee_David_ne_pas_efface/Base_de_donnee_David_ne_pas_efface/Contacts.csv'
+//export const fichier_csv = 'D:/Base_de_donnee_David_ne_pas_efface/Base_de_donnee_David_ne_pas_efface/Contacts.csv'
+export const fichier_csv = '/Users/charlespelong/Desktop/Contacts.csv'
 const fs = require('fs');
 const XLSX = require('xlsx');
 const csv = require('csv-parser');

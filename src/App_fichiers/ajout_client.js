@@ -28,25 +28,25 @@ export function AjoutClient(){
 
       const newData = 
       document.getElementById("ID")?.value + ";" +
-      document.getElementById("Societe").value + ";" +
-      document.getElementById('Reseau').value + ";" +
-      document.getElementById('Genre').value + ";" +
-      document.getElementById('Nom').value + ";" +
-      document.getElementById('Prenom').value + ";" +
-      document.getElementById('Adresse e-mail').value + ";" +
-      document.getElementById('Intitule du poste').value + ";" +
-      document.getElementById('Telephone professionnel').value + ";" +
-      document.getElementById('Telephone mobile').value + ";" +
-      document.getElementById('Catalogue').value + ";" +
-      document.getElementById('Adresse').value + ";" +
-      document.getElementById('Adresse 2').value + ";" +
-      document.getElementById('Ville').value + ";" +
-      document.getElementById('Code postal').value + ";" +
-      document.getElementById('Pays/région').value + ";" +
-      document.getElementById('Page Web').value + ";" +
-      document.getElementById('Notes').value + ";" +
-      document.getElementById('Pieces jointes').value + ";" +
-      document.getElementById('Retrait Mailing').value + ";" +
+      document.getElementById("Societe")?.value + ";" +
+      document.getElementById('Reseau')?.value + ";" +
+      document.getElementById('Genre')?.value + ";" +
+      document.getElementById('Nom')?.value + ";" +
+      document.getElementById('Prenom')?.value + ";" +
+      document.getElementById('Adresse e-mail')?.value + ";" +
+      document.getElementById('Intitule du poste')?.value + ";" +
+      document.getElementById('Telephone professionnel')?.value + ";" +
+      document.getElementById('Telephone mobile')?.value + ";" +
+      document.getElementById('Catalogue')?.value + ";" +
+      document.getElementById('Adresse')?.value + ";" +
+      document.getElementById('Adresse 2')?.value + ";" +
+      document.getElementById('Ville')?.value + ";" +
+      document.getElementById('Code postal')?.value + ";" +
+      document.getElementById('Pays/région')?.value + ";" +
+      document.getElementById('Page Web')?.value + ";" +
+      document.getElementById('Notes')?.value + ";" +
+      document.getElementById('Pieces jointes')?.value + ";" +
+      document.getElementById('Retrait Mailing')?.value + ";" +
       document.getElementById('Taux')?.value
     
 
