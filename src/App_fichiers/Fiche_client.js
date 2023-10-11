@@ -254,7 +254,7 @@ console.log(document.getElementById('Taux'));
       <h1>FICHE CLIENT </h1>
       <form className="fiche-modifiable" >
          <div className='ligne'>
-          {listeDonnee.slice(0,3).map(([key, value]) => (
+          {listeDonnee.slice(1,3).map(([key, value]) => (
           <Information key={key} name={key} value={value} line={props.entite.__rowNum__} />))}  
         </div>
         <div className='ligne'>
@@ -270,7 +270,9 @@ console.log(document.getElementById('Taux'));
         </div>
        
               <div className='ligne'>
-              {listeDonnee.slice(9,12).map(([key, value]) => (
+              {listeDonnee.slice(9,10).map(([key, value]) => (
+          <Information key={key} name={key} value={value} line={props.entite.__rowNum__} />))}
+          {listeDonnee.slice(11,12).map(([key, value]) => (
           <Information key={key} name={key} value={value} line={props.entite.__rowNum__} />))}
               </div>
               <div className='ligne'>
@@ -278,15 +280,13 @@ console.log(document.getElementById('Taux'));
           <Information key={key} name={key} value={value} line={props.entite.__rowNum__} />))}
         </div>
         <div className='ligne'>
-          {listeDonnee.slice(15,18).map(([key, value]) => (
+          {listeDonnee.slice(15,16).map(([key, value]) => (
+          <Information key={key} name={key} value={value} line={props.entite.__rowNum__} />))}
+          {listeDonnee.slice(17,18).map(([key, value]) => (
           <Information key={key} name={key} value={value} line={props.entite.__rowNum__} />))}
         </div>
         <div className='ligne'>
-          {listeDonnee.slice(18,21).map(([key, value]) => (
-          <Information key={key} name={key} value={value} line={props.entite.__rowNum__} />))}
-        </div>
-        <div className='ligne'>
-          {listeDonnee.slice(21,22).map(([key, value]) => (
+          {listeDonnee.slice(19,22).map(([key, value]) => (
           <Information key={key} name={key} value={value} line={props.entite.__rowNum__} />))}
         </div>
        
