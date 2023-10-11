@@ -14,7 +14,8 @@ import BarreRechercheClientsReseau from './App_fichiers/barre_recherche_clients_
 import { Retrouver_ligne_clients } from './App_fichiers/liste';
 import { AjoutClient }  from './App_fichiers/ajout_client';
 import ExportEnVCF from './App_fichiers/bouton_exporter_en_vcf';
-import { ReactDOM } from 'react-dom';
+import ReactDOM from 'react-dom';
+import EviterBugAjout from './App_fichiers/eviter_bug_ajout';
 
 function App() {
 
@@ -49,7 +50,7 @@ function App() {
     <div className="container">
     <div id="menu">
       <button onClick={() => handleClick('afficherBarreRecherche')}>Afficher Barre de Recherche</button>
-      <button onClick={() => handleClick('afficherAjoutlient')}> Ajout Client</button>
+      <button onClick={() => {const element = <EviterBugAjout />; ReactDOM.render(element, document.getElementById('root'));}}> Ajout Client</button>
 
       <Menu2 datas={jsonData}/>
       

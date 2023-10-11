@@ -7,10 +7,13 @@ import BarreRecherche from './barre_de_recherche';
 import { fichier_csv } from './fichier_csv';
 import InformationAjout from './information_ajout';
 import Menu2 from './menu_deroulant';
-
+import EviterBugAjout from './eviter_bug_ajout';
 
 // Chemin du fichier CSV
 const filePath = fichier_csv;
+
+
+console.log(jsonData)
 
 
 const fs = require('fs');
@@ -26,14 +29,20 @@ export function AjoutClient(){
         return;
       }
 
+      const lastIndex = jsonData.length - 1; // L'indice de la dernière ligne
+      const lastID = jsonData[lastIndex].ID; // L'ID de la dernière ligne
+
+      const putID = String(parseInt(lastID)+1)
+
+     
       const newData = 
-      document.getElementById("ID")?.value + ";" +
+      putID + ";" +
       document.getElementById("Societe")?.value + ";" +
       document.getElementById('Reseau')?.value + ";" +
       document.getElementById('Genre')?.value + ";" +
       document.getElementById('Nom')?.value + ";" +
       document.getElementById('Prenom')?.value + ";" +
-      document.getElementById('Adresse e-mail')?.value + ";" +
+      (document.getElementById('Adresse e-mail')?.value  ? document.getElementById('Adresse e-mail')?.value : putID) + ";" +
       document.getElementById('Intitule du poste')?.value + ";" +
       document.getElementById('Telephone professionnel')?.value + ";" +
       document.getElementById('Telephone mobile')?.value + ";" +
@@ -48,6 +57,7 @@ export function AjoutClient(){
       document.getElementById('Pieces jointes')?.value + ";" +
       document.getElementById('Retrait Mailing')?.value + ";" +
       document.getElementById('Taux')?.value
+
     
 
       // Ajout de la nouvelle ligne au contenu existant
@@ -95,17 +105,84 @@ export function AjoutClient(){
   return (
     <div className="container">
     
-    
+    <div id="menu">
+      <button onClick={() => handleClick('afficherBarreRecherche')}>Afficher Barre de Recherche</button>
+      <button onClick={() => {const element = <EviterBugAjout />; ReactDOM.render(element, document.getElementById('root'));}}> Ajout Client  </button>
 
 
+      <Menu2 datas={jsonData}/>
+      
+    </div>
+
+    <div id="content">
     <div id="fiche-ajout">
     {renderActivePage()}
     <div className="fiche">
     <h1>AJOUT CLIENT </h1>
       <form className="fiche-modifiable" >
-        {Object.entries(jsonData[0]).map(([key, value]) => (
+        <div className='ligne'>
+        {Object.entries(jsonData[0]).slice(0,3).map(([key, value]) => (
+
+        (key !== "ID" && key !== "Catalogue" && key !== "Page Web" && key !== "Pieces jointes") && (
           <InformationAjout key={key} name={key} value={""} line={jsonData[0].__rowNum__} />
+        )
+          
         ))}
+        </div>
+        <div className='ligne'>
+        {Object.entries(jsonData[0]).slice(3,6).map(([key, value]) => (
+
+        (key !== "ID" && key !== "Catalogue" && key !== "Page Web" && key !== "Pieces jointes") && (
+          <InformationAjout key={key} name={key} value={""} line={jsonData[0].__rowNum__} />
+        )
+          
+        ))}
+        </div>
+        <div className='ligne'>
+        {Object.entries(jsonData[0]).slice(6,9).map(([key, value]) => (
+
+        (key !== "ID" && key !== "Catalogue" && key !== "Page Web" && key !== "Pieces jointes") && (
+          <InformationAjout key={key} name={key} value={""} line={jsonData[0].__rowNum__} />
+        )
+          
+        ))}
+        </div>
+        <div className='ligne'>
+        {Object.entries(jsonData[0]).slice(9,12).map(([key, value]) => (
+
+        (key !== "ID" && key !== "Catalogue" && key !== "Page Web" && key !== "Pieces jointes") && (
+          <InformationAjout key={key} name={key} value={""} line={jsonData[0].__rowNum__} />
+        )
+          
+        ))}
+        </div>
+        <div className='ligne'>
+        {Object.entries(jsonData[0]).slice(12,15).map(([key, value]) => (
+
+        (key !== "ID" && key !== "Catalogue" && key !== "Page Web" && key !== "Pieces jointes") && (
+          <InformationAjout key={key} name={key} value={""} line={jsonData[0].__rowNum__} />
+        )
+          
+        ))}
+        </div>
+        <div className='ligne'>
+        {Object.entries(jsonData[0]).slice(15,18).map(([key, value]) => (
+
+        (key !== "ID" && key !== "Catalogue" && key !== "Page Web" && key !== "Pieces jointes") && (
+          <InformationAjout key={key} name={key} value={""} line={jsonData[0].__rowNum__} />
+        )
+          
+        ))}
+        </div>
+        <div className='ligne'>
+        {Object.entries(jsonData[0]).slice(19,22).map(([key, value]) => (
+
+        (key !== "ID" && key !== "Catalogue" && key !== "Page Web" && key !== "Pieces jointes") && (
+          <InformationAjout key={key} name={key} value={""} line={jsonData[0].__rowNum__} />
+        )
+          
+        ))}
+        </div>
         <input type="submit" value="Recharger l'application pour voir les modifications" />
       </form>
       <p className="newline"></p>
@@ -120,6 +197,7 @@ export function AjoutClient(){
       
       
 
+    </div>
     </div>
     </div>
     </div>

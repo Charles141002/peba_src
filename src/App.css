@@ -358,11 +358,11 @@ textarea {
 .ligne {
   display: flex;
   
-  margin: 0 1.5em;
+  margin: 0 1em;
 }
 
 .ligne div {
-  margin: 1.5em;
+  margin: 1em;
 }
 
 .below {

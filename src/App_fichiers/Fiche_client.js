@@ -10,6 +10,7 @@ import { SupprimerClient } from './ajout_client';
 import { AjoutClient } from './ajout_client';
 import ExportEnVCF from './bouton_exporter_en_vcf';
 import { fichier_csv } from './fichier_csv';
+import EviterBugAjout from './eviter_bug_ajout';
 
 
 function Fiche(props) {
@@ -75,17 +76,17 @@ console.log(document.getElementById('Taux'));
             const newData = [
               [
                 document.getElementById("ID")?.value,
-                document.getElementById("Societe").value,
-                document.getElementById('Reseau').value,
-                document.getElementById('Genre').value,
-                document.getElementById('Nom').value,
-                document.getElementById('Prenom').value,
-                document.getElementById('Adresse e-mail').value,
-                document.getElementById('Intitule du poste').value,
-                document.getElementById('Telephone professionnel').value,
-                document.getElementById('Telephone mobile').value,
-                document.getElementById('Catalogue').value,
-                document.getElementById('Adresse').value,
+                document.getElementById("Societe")?.value,
+                document.getElementById('Reseau')?.value,
+                document.getElementById('Genre')?.value,
+                document.getElementById('Nom')?.value,
+                document.getElementById('Prenom')?.value,
+                document.getElementById('Adresse e-mail')?.value,
+                document.getElementById('Intitule du poste')?.value,
+                document.getElementById('Telephone professionnel')?.value,
+                document.getElementById('Telephone mobile')?.value,
+                document.getElementById('Catalogue')?.value,
+                document.getElementById('Adresse')?.value,
                 document.getElementById('Adresse 2')?.value,
                 document.getElementById('Ville')?.value,
                 document.getElementById('Code postal')?.value,
@@ -153,6 +154,55 @@ console.log(document.getElementById('Taux'));
       console.log('Le fichier CSV a été modifié avec succès.');
     });
   });
+  // CHANGER L HEURE DE CONSULTATION DE LA FICHE
+
+  var currentDate = new Date();
+  var dateString = currentDate.toDateString(); // Convertir la date en une représentation de chaîne de caractères
+
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+   if (err) {
+      console.error('Une erreur s\'est produite lors de la lecture du fichier CSV :', err);
+      return;
+    }
+
+    const lignes = data.split('\n');
+    const entetes = lignes[0].split(';');
+
+    const modifIndex = entetes.indexOf('Derniere Modif\r');
+
+            // Ajouter les nouvelles données à la feuille de calcul
+           const newData = [
+              [
+                dateString
+            ]
+            ];
+
+      console.log(newData[0][0])
+ 
+      const colonnes = lignes[ligneAmodifier].split(';');
+
+      colonnes[modifIndex] =newData[0][0];
+
+      lignes[ligneAmodifier] = colonnes.join(';');
+      console.log(colonnes)
+      console.log(colonnes[modifIndex])
+      console.log(modifIndex)
+
+    const fichierModifie = lignes.join('\n');
+
+
+
+     //Écrire les données modifiées dans le fichier CSV
+   fs.writeFile(filePath, fichierModifie, 'utf8', (err) => {
+      if (err) {
+        console.error('Une erreur s\'est produite lors de l\'écriture du fichier CSV :', err);
+       return;
+      }
+      console.log('Le fichier CSV a été modifié avec succès.');
+    });
+  });
+
 }
 
 // Appel de la fonction pour modifier le fichier CSV
@@ -185,49 +235,6 @@ console.log(document.getElementById('Taux'));
   };
 
 
-  // CHANGER L HEURE DE CONSULTATION DE LA FICHE
-
-  var currentDate = new Date();
-  var dateString = currentDate.toDateString(); // Convertir la date en une représentation de chaîne de caractères
-
-
- // fs.readFile(filePath, 'utf8', (err, data) => {
-   // if (err) {
-     // console.error('Une erreur s\'est produite lors de la lecture du fichier CSV :', err);
-   //   return;
-   // }
-
-  //  const lignes = data.split('\n');
-   // const entetes = lignes[0].split(';');
-
-    //const modifIndex = entetes.indexOf('Dernière Modif');
-
-            // Ajouter les nouvelles données à la feuille de calcul
-    //       const newData = [
-     //         [
-      //          dateString
-      //      ]
-    //        ];
-    
-    //  const colonnes = lignes[ligneAmodifier].split(';');
-
-     // colonnes[modifIndex] =newData[0][0];
-
-     // lignes[ligneAmodifier] = colonnes.join(';');
-
-    //const fichierModifie = lignes.join('\n');
-
-
-
-    // Écrire les données modifiées dans le fichier CSV
- //   fs.writeFile(filePath, fichierModifie, 'utf8', (err) => {
-  //    if (err) {
-   //     console.error('Une erreur s\'est produite lors de l\'écriture du fichier CSV :', err);
-    //    return;
-   //   }
-   //   console.log('Le fichier CSV a été modifié avec succès.');
-  //  });
- // });
 
   const listeDonnee = Object.entries(props.entite);
 
@@ -241,7 +248,7 @@ console.log(document.getElementById('Taux'));
     <div className="container">
     <div id="menu">
       <button onClick={() => handleClick('afficherBarreRecherche')}>Afficher Barre de Recherche</button>
-      <button onClick={() => handleClick('afficherAjoutlient')}> Ajout Client  </button>
+      <button onClick={() => {const element = <EviterBugAjout />; ReactDOM.render(element, document.getElementById('root'));}}> Ajout Client  </button>
 
       <Menu2 datas={jsonData}/>
       
